@@ -12,14 +12,14 @@
 		<img src="images/feature3.jpg" alt="header_image">
 		<nav>
 			<ul>
-				<a href="#"><li>Blog</li></a>
-				<a href="#"><li>About</li></a>
-				<a href="#"><li href="#">Contact</li></a>
+				<li>Blog</li>
+				<li>About</li>
+				<li>Contact</li>
 			</ul>
 		</nav>
 	</header>
 	<section class="about_me">
-		<h2>ABOUT ME</h2>
+		<h2>ABOUT ME</h2> 
 		<p>The name evil twin comes simply from me having a twin brother. We are polar opposites, you know that whole 'good twin vs bad twin thing. It has nothing to do with being evil-- Well, depending on your pespective.</p>
 		<img src="images/feature_image.jpg" alt="feature_image">
 	</section>
