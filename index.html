@@ -2,22 +2,78 @@
 <html>
 <head>
 	<title>Evil Twin</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Marck+Script|Rajdhani:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
 	<header>
 		<h1>The Evil Twin</h1>
 		<p class="tagline">Fashion &amp; Beauty</p>
-		<img src="images/feature1.jpg" alt="header_image">
-		<img src="images/feature2.jpg" alt="header_image">
-		<img src="images/feature3.jpg" alt="header_image">
-		<nav>
+		<div class="center_container float_left">
+				<div class="circle_image feature1"> <!--to go inside of div with WP style="background-image: url(<?php the_field('feature_one'); ?>); background-position: center; background-repeat: no-repeat; background-size: cover"> --> </div>
+				<div class="circle_image feature2"></div>
+				<div class="circle_image feature3"></div>
+		</div>
+		<nav class="clear">
 			<ul>
-				<li>Blog</li>
-				<li>About</li>
-				<li>Contact</li>
+				<a href="#"><li>Blog</li></a>
+				<a href="about_me.html"><li>About</li></a>
+				<a href="#"><li>Contact</li></a>
 			</ul>
-		</nav>
+		</nav>	
 	</header>
+		<section class="side_content">
+		<div class="side_content_section">
+			<h4>FOLLOW ME:</h4>
+			<i class="fa fa-twitter-square"></i>
+			<i class="fa fa-instagram"></i>
+			<i class="fa fa-facebook-square"></i>
+		</div>
+		<div class="side_content_section">
+			<h4>RECENT POSTS:</h4>
+			<!-- <ul>
+				<?php
+
+
+				$args = array( 'posts_per_page' => 5, 'offset'=> 1, 'category' => 1 );
+
+				$myposts = get_posts( $args );
+				foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+					<li>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</li>
+				<?php endforeach; 
+				wp_reset_postdata();?>
+
+				</ul> -->
+			<p class="side_content_blog_title">Spring into Jumpsuits!</p>
+			<p class="side_content_blog_date">March 9, 2016</p>
+		</div>
+		<div class="side_content_section">
+			<h4>SEARCH BY TAGS:</h4>
+			<!--	$tags = get_tags();
+					$html = '<div class="post_tags">';
+					foreach ( $tags as $tag ) {
+						$tag_link = get_tag_link( $tag->term_id );
+			
+						$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+						$html .= "{$tag->name}</a>";
+					}
+					$html .= '</div>';
+					echo $html; -->
+					<!-- get_tags() is located in wp/includes/catergory.php -->
+			<p class="tags">closet</p> 
+			<p class="tags">forever21</p>
+			<p class="tags">jumpsuit</p>
+		</div>
+		<div class="side_content_section">
+			<h4>WHO AM I:</h4>
+			<a href="about_me.html"><img src="images/feature_image.jpg" alt="feature_image"> </a>
+		</div>
+	</section>
 	<section class="main_content">
 		<div class="blog_post">
 				<!-- pulled below example from https://codex.wordpress.org/Function_Reference/wp_get_recent_posts -->
@@ -49,58 +105,55 @@
 			</ul> -->
 			<h3>SPRING INTO JUMPSUITS</h3>
 			<P class="date">March 9, 2016</P>
-			<img class="blog_post_image" src="images/blog_post1_image_">
-			<p class="blog_content">Oh the joys of Spring! there are some many thing I'm looking forward to--- Warm weather, light salads, longer days, and....... ROMPERS. My curent obession are the ones the stop at the calf or right below the knee. The one pictured (above) I purchased from Forever 21 last year. It is awesome and I loved it BUT as soon as it was washed, it faded!! Womp, Womp. I had left it over at my friends, and being the considerate person she is, she washed it. I was throughly heated about it at first and partially blamed her for being a good friend?! But I looked into it and apparently I was not the only one whose jumpsuit did that. Of course, you get what you pay. I have such truoble letting it go so I have not yet decided if I want to sell it on an app like Poshmark or just give it to goodwill. </p>
+			<p class="blog_content">Oh the joys of Spring! there are some many thing I'm looking forward to--- Warm weather, light salads, longer days, and....... ROMPERS. My curent obession are the ones the stop at the calf or right below the knee. The one pictured (above) I purchased from Forever 21 ...</p>
+			<img class="blog_post_image" src="images/blog_post1_image.jpg">
+			<button href="#" class="w3-btn main_button">Read More</button>
+		</div>
+			<div class="blog_post">
+				<!-- pulled below example from https://codex.wordpress.org/Function_Reference/wp_get_recent_posts -->
+				<!-- <?php $args = array(
+				    'numberposts' => 10,
+				    'offset' => 0,
+				    'category' => 0,
+				    'orderby' => 'post_date',
+				    'order' => 'DESC',
+				    'include' => ,
+				    'exclude' => ,
+				    'meta_key' => ,
+				    'meta_value' =>,
+				    'post_type' => 'post',
+				    'post_status' => 'draft, publish, future, pending, private',
+				    'suppress_filters' => true );
+
+				    $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+				?> -->
+			<!-- wp_get_recent_posts() is located in wp-includes/post.php. -->
+			<!-- <h2>Recent Posts</h2>
+			<ul>
+			<?php
+				$args = array( 'numberposts' => '5' );
+				$recent_posts = wp_get_recent_posts( $args );
+				foreach( $recent_posts as $recent ){
+					echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+				}?>
+			</ul> -->
+			<h3>HERE GOES SOMETHING</h3>
+			<P class="date">March 9, 2016</P>
+			<p class="blog_content">I have litterly been saying I'm going to start a blog for the past 4 years! So this time I'm FOR REAL. You guys have to hold me to it.</p>
+			<p>I'm not sure people still read blogs anymore-  or read for that matter- considering you have social media outlets like Instagram wher...</p>
 			<button href="#" class="main_button">Read More</button>
 		</div>
 	</section>
-	<section class="side_content">
-		<div>
-			<h4>RECENT POSTS:</h4>
-			<!-- <ul>
-				<?php
-
-
-				$args = array( 'posts_per_page' => 5, 'offset'=> 1, 'category' => 1 );
-
-				$myposts = get_posts( $args );
-				foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-					<li>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</li>
-				<?php endforeach; 
-				wp_reset_postdata();?>
-
-				</ul> -->
-			<p class="side_content_blog_title">Spring into Jumpsuits!</p>
-			<p class="side_content_blog_date">March 9, 2016</p>
-		</div>
-		<div>
-			<h4>SEARCH BY TAGS:</h4>
-			<!--	$tags = get_tags();
-					$html = '<div class="post_tags">';
-					foreach ( $tags as $tag ) {
-						$tag_link = get_tag_link( $tag->term_id );
-			
-						$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-						$html .= "{$tag->name}</a>";
-					}
-					$html .= '</div>';
-					echo $html; -->
-					<!-- get_tags() is located in wp/includes/catergory.php -->
-			<p class="tags">closet</p> 
-			<p class="tags">forever21</p>
-			<p class="tags">jumpsuit</p>
-		</div>
-		<div>
-			<h4>WHO AM I</h4>
-			<img src="images/feature_image.jpg" alt="feature_image"> 
-		</div>
-	</section>
+	<div class="clear">&nbsp;</div>
 	<footer>
-		<i class="fa fa-twitter"></i>
-		<i class="fa fa-instagram"></i>
-		<i class="fa fa-facebook"></i>
+			<div class="social_media footer_content">
+				<p class="float_left">FOLLOW ME:</p>
+				<i class="fa fa-twitter-square float_left"></i>
+				<i class="fa fa-instagram float_left"></i>
+				<i class="fa fa-facebook-square float_left"></i>
+			</div>
+			<p class=" copyright footer_content">&copy;Copyright 2016 Shannon Cox</p>
 	</footer>
+	<div class="clear">&nbsp;</div>
 </body>
 </html>
